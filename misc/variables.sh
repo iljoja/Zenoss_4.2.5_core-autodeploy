@@ -113,6 +113,18 @@ os-fixes () {
                         wget https://raw.github.com/hydruid/zenoss/master/core-autodeploy/4.2.5/misc/netsnmp.py
                         chown zenoss:zenoss netsnmp.py
                         echo "...Specific OS fixes complete."
+	elif grep -q "Ubuntu 16" /etc/issue.net
+                then    cd /usr/local/zenoss/lib/python/pynetsnmp
+                        mv netsnmp.py netsnmp.py.orig
+                        wget https://raw.github.com/hydruid/zenoss/master/core-autodeploy/4.2.5/misc/netsnmp.py
+                        chown zenoss:zenoss netsnmp.py
+                        echo "...Specific OS fixes complete."
+	elif grep -q "Ubuntu 18" /etc/issue.net
+                then    cd /usr/local/zenoss/lib/python/pynetsnmp
+                        mv netsnmp.py netsnmp.py.orig
+                        wget https://raw.github.com/hydruid/zenoss/master/core-autodeploy/4.2.5/misc/netsnmp.py
+                        chown zenoss:zenoss netsnmp.py
+                        echo "...Specific OS fixes complete."
         elif grep -q "Ubuntu 12" /etc/issue.net
                 then    echo "...No specific OS fixes needed."
         elif grep -Fxq "Debian GNU/Linux 7" /etc/issue.net
